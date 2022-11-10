@@ -20,7 +20,7 @@ test_that(
   {
     data(ukb_accel)
     p = accel_plot(ukb_accel[1:100,]) # + ggplot2::theme_minimal() # test fails
-    expect_doppelganger("first-100-samples", p)
+    vdiffr::expect_doppelganger("first-100-samples", p)
     # expect_doppelganger: a testthat expectation for graphical plots
   }
 )
