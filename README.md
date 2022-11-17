@@ -8,6 +8,7 @@
 [![R-CMD-check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/kexinwang3/bis620.2022/branch/main/graph/badge.svg)](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
+[![test-coverage](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
 The goal of bis620.2022 is to …
