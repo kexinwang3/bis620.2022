@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/kexinwang3/bis620-2022?branch=main&svg=true)](https://ci.appveyor.com/project/kexinwang3/bis620-2022)
 [![Codecov test
 coverage](https://codecov.io/gh/kexinwang3/bis620.2022/branch/main/graph/badge.svg)](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
 [![test-coverage](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
@@ -15,12 +17,15 @@ coverage](https://codecov.io/gh/kexinwang3/bis620.2022/branch/main/graph/badge.s
 ## Description
 
 bis620.2022 provides tools to get the spectral signature of
-accelerometry data and plot UKBiobank data.
+accelerometry data and plot UKBiobank data. This package contains two
+main functions: `spectral_signature` and `accel_plot`.
 
 ##### Useful links:
 
 -   [R CMD
     Check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
+-   [Build
+    status](https://ci.appveyor.com/project/kexinwang3/bis620-2022)
 -   [Codecov](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
 -   [Coverage
     tests](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
@@ -69,7 +74,7 @@ ukb_accel |>
     ylab("Acceleration (in gravities)")
 ```
 
-<img src="man/figures/README-time-series plot-1.png" width="100%" />
+<img src="man/figures/README-time-series-plot-1.png" width="100%" />
 
 -   Plot spectral signature of UKBiobank accelerometry data
 
@@ -82,4 +87,4 @@ ukb_accel |>
     theme_minimal()
 ```
 
-<img src="man/figures/README-spectral signature plot-1.png" width="100%" />
+<img src="man/figures/README-spectral-signature-plot-1.png" width="100%" />
