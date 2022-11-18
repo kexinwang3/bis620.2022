@@ -18,8 +18,11 @@ coverage](https://codecov.io/gh/kexinwang3/bis620.2022/branch/main/graph/badge.s
 bis620.2022 provides tools to get the spectral signature of
 accelerometry data and plot UKBiobank data.
 
+##### Useful links:
+
 -   [R CMD
     Check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
+-   [Build status](https://app.travis-ci.com/kexinwang3/bis620.2022)
 -   [Codecov](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
 -   [Coverage
     tests](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
@@ -47,7 +50,6 @@ library(bis620.2022)
 library(lubridate)
 library(dplyr)
 library(ggplot2)
-#> Warning: package 'ggplot2' was built under R version 4.2.2
 ```
 
 -   Load the dataset `ukb_accel`
@@ -61,7 +63,6 @@ dt <- first(ukb_accel$time)
 -   Plot UKBiobank accelerometry data
 
 ``` r
-# Plot UKBiobank accelerometry data
 ukb_accel |>
   filter(time >= dt  & time < dt + minutes(5)) |>
   accel_plot() +
@@ -70,7 +71,7 @@ ukb_accel |>
     ylab("Acceleration (in gravities)")
 ```
 
-<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+<img src="man/figures/README-time-series plot-1.png" width="100%" />
 
 -   Plot spectral signature of UKBiobank accelerometry data
 
@@ -83,4 +84,4 @@ ukb_accel |>
     theme_minimal()
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-spectral signature plot-1.png" width="100%" />
