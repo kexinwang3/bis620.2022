@@ -6,7 +6,6 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
-[![Build](https://app.travis-ci.com/kexinwang3/bis620.2022.svg?branch=main)](https://app.travis-ci.com/kexinwang3/bis620.2022)
 [![Codecov test
 coverage](https://codecov.io/gh/kexinwang3/bis620.2022/branch/main/graph/badge.svg)](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
 [![test-coverage](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
@@ -22,7 +21,6 @@ accelerometry data and plot UKBiobank data.
 
 -   [R CMD
     Check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
--   [Build status](https://app.travis-ci.com/kexinwang3/bis620.2022)
 -   [Codecov](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
 -   [Coverage
     tests](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
