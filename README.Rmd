@@ -17,42 +17,70 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
+[![Build](https://app.travis-ci.com/kexinwang3/bis620.2022.svg?branch=main)](https://app.travis-ci.com/kexinwang3/bis620.2022)
 [![Codecov test coverage](https://codecov.io/gh/kexinwang3/bis620.2022/branch/main/graph/badge.svg)](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
 [![test-coverage](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
 [![lint](https://github.com/kexinwang3/bis620.2022/actions/workflows/lint.yaml/badge.svg)](https://github.com/kexinwang3/bis620.2022/actions/workflows/lint.yaml)
 <!-- badges: end -->
 
-The goal of bis620.2022 is to ...
+## Description
+
+bis620.2022 provides tools to get the spectral signature of accelerometry data and plot UKBiobank data.
+
+- [R CMD Check](https://github.com/kexinwang3/bis620.2022/actions/workflows/R-CMD-check.yaml)
+- [Codecov](https://app.codecov.io/gh/kexinwang3/bis620.2022?branch=main)
+- [Coverage tests](https://github.com/kexinwang3/bis620.2022/actions/workflows/test-coverage.yaml)
+- [Lint results](https://github.com/kexinwang3/bis620.2022/actions/workflows/lint.yaml)
 
 ## Installation
 
 You can install the development version of bis620.2022 from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("kexinwang3/bis620.2022")
+```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+- Attach required packages
+
+```{r, message = FALSE}
 library(bis620.2022)
-## basic example code
+library(lubridate)
+library(dplyr)
+library(ggplot2)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+- Load the dataset `ukb_accel`
 
-```{r cars}
-summary(cars)
+```{r}
+data(ukb_accel)
+# Extract the first value from ukb_accel$time
+dt <- first(ukb_accel$time)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+- Plot UKBiobank accelerometry data
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+```{r}
+# Plot UKBiobank accelerometry data
+ukb_accel |>
+  filter(time >= dt  & time < dt + minutes(5)) |>
+  accel_plot() +
+    theme_minimal() +
+    xlab("Time") +
+    ylab("Acceleration (in gravities)")
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+- Plot spectral signature of UKBiobank accelerometry data
+
+```{r}
+ukb_accel |>
+  filter(time >= dt & time < dt + minutes(5)) |>
+  spectral_signature(take_log = TRUE) |>
+  filter(freq <= 10) |>
+  accel_plot() +
+    theme_minimal()
+```
