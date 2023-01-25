@@ -8,6 +8,7 @@ Description: Captures functions, data, and documentation for BIS620 as taught in
 License: LGPL (>= 2.1)
 Encoding: UTF-8
 RoxygenNote: 7.2.1
+RoxygenNote: 7.2.2
 Imports: 
   dplyr,
   ggplot2,
